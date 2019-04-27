@@ -49,7 +49,10 @@ public class EquipmentManager : MonoBehaviour
         }
 
         currentEquipment[slotIndex] = newItem;
-        playerWeapon.GetComponent<SpriteRenderer>().sprite = newItem.icon;
+        if (slotIndex == 3)
+        {
+            playerWeapon.GetComponent<SpriteRenderer>().sprite = newItem.icon;
+        }
     }
 
     public void Unequip (int slotIndex)
@@ -67,7 +70,10 @@ public class EquipmentManager : MonoBehaviour
             }
         }
 
-        playerWeapon.GetComponent<SpriteRenderer>().sprite = null;
+        if (slotIndex == 3)
+        {
+            playerWeapon.GetComponent<SpriteRenderer>().sprite = null;
+        }
     }
 
     public void UnequipAll()

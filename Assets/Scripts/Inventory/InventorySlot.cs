@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class InventorySlot : MonoBehaviour
 {
     public Image icon;
+    private Image ring;
     public Button removeButton;
 
     Item item;

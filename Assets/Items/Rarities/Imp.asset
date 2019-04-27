@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Imp
+  m_EditorClassIdentifier: Assembly-CSharp::Rarity
+  rarityTitle: Imp
+  dropChance: 0.5
+  color: {r: 0.26415092, g: 0.25542894, b: 0.25542894, a: 0}
+  ring: {fileID: 21300000, guid: 98582d2d3a122274b95b010c2f6034a3, type: 3}

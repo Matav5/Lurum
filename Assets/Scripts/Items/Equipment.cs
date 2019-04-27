@@ -6,7 +6,7 @@ using UnityEngine;
 public class Equipment : Item
 {
     public EquipmentSlot equipSlot;
-
+    public Rarity rarity;
     public int armorModifier;
     public int damageModifier;
 
@@ -16,6 +16,17 @@ public class Equipment : Item
         EquipmentManager.instance.Equip(this);
         RemoveFromInventory();
     }
+}
+
+[CreateAssetMenu(fileName = "New Rarity", menuName = "Inventory/Rarity")]
+public class Rarity : ScriptableObject
+{
+
+    public string rarityTitle;
+    public float dropChance;
+    public Color color;
+    public Sprite ring;
+
 }
 
 public enum EquipmentSlot { Head, Chest, Legs, Weapon, Shield, Feet }

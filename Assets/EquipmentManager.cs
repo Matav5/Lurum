@@ -13,6 +13,8 @@ public class EquipmentManager : MonoBehaviour
     }
     #endregion
 
+    public GameObject playerWeapon;
+
     Equipment[] currentEquipment;
 
     public delegate void OnEquipmentChanged(Equipment newItem, Equipment oldItem);
@@ -47,6 +49,7 @@ public class EquipmentManager : MonoBehaviour
         }
 
         currentEquipment[slotIndex] = newItem;
+        playerWeapon.GetComponent<SpriteRenderer>().sprite = newItem.icon;
     }
 
     public void Unequip (int slotIndex)
@@ -63,6 +66,8 @@ public class EquipmentManager : MonoBehaviour
                 onEquipmentChanged.Invoke(null, oldItem);
             }
         }
+
+        playerWeapon.GetComponent<SpriteRenderer>().sprite = null;
     }
 
     public void UnequipAll()

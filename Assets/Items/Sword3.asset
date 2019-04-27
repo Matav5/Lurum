@@ -15,3 +15,6 @@ MonoBehaviour:
   name: Sow
   icon: {fileID: 21300000, guid: 097aea169bb178741a4d4a19ec0fd535, type: 3}
   isDefaultItem: 0
+  equipSlot: 3
+  armorModifier: 0
+  damageModifier: 2

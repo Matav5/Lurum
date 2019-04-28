@@ -149,7 +149,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4860aec2adabb04f94bc62fc1e82cad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopUI: {fileID: 0}
+  shopUI: {fileID: 1293511143}
+  player: {fileID: 650962700}
+  mainText: {fileID: 1889871371}
+  buyButton: {fileID: 79921286}
 --- !u!4 &19226212
 Transform:
   m_ObjectHideFlags: 0
@@ -245,7 +248,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 79921287}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 19226211}
+        m_MethodName: Buy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &79921287
@@ -772,6 +786,12 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9038763945376111726, guid: f9e9e0a0c8b35e342bfedac454d44218,
     type: 3}
   m_PrefabInstance: {fileID: 255835586}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &650962700 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2984116848662487916, guid: 13a5ea1d01ae3d3479f90f36f3535588,
+    type: 3}
+  m_PrefabInstance: {fileID: 1957127870}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &842468808
 GameObject:
@@ -1483,9 +1503,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Cancel
-
-'
+  m_Text: Close
 --- !u!222 &1516778293
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1588,7 +1606,7 @@ GameObject:
   - component: {fileID: 1686110163}
   - component: {fileID: 1686110162}
   m_Layer: 5
-  m_Name: Cancel
+  m_Name: Close
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1656,7 +1674,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1686110163}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 19226211}
+        m_MethodName: toggleShop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1686110163
@@ -2307,7 +2336,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '
+  m_Text: 'ahoj
 
 '
 --- !u!222 &1889871372

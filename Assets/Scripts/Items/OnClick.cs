@@ -5,10 +5,12 @@ using UnityEngine;
 public class OnClick : MonoBehaviour
 {
     public Item item;
+    private bool wasBought;
 
     void OnMouseUp()
     {
-        pickUp();
+        Shop.instance.whatItem(item, gameObject);
+        Shop.instance.toggleShop();
     }
 
     void pickUp()
@@ -19,7 +21,6 @@ public class OnClick : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
     }
 
 }

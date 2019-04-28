@@ -18,15 +18,4 @@ public class Equipment : Item
     }
 }
 
-[CreateAssetMenu(fileName = "New Rarity", menuName = "Inventory/Rarity")]
-public class Rarity : ScriptableObject
-{
-
-    public string rarityTitle;
-    public float dropChance;
-    public Color color;
-    public Sprite ring;
-
-}
-
 public enum EquipmentSlot { Head, Chest, Legs, Weapon, Shield, Feet }

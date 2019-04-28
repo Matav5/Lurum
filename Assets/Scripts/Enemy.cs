@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
     private IEnumerator damagePlayer() {
         readyToAttack = false;
         //Debug.Log("Player damaged!");
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>().takeDamage(10);
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Health>().Hit(10f);
         yield return new WaitForSeconds(1f);
         readyToAttack = true;
     }

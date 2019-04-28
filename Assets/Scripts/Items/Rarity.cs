@@ -12,5 +12,5 @@ public class Rarity : ScriptableObject
     public Sprite ring;
     public float price;
     public float damageModifier;
-
+    public Sprite image;
 }

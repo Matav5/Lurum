@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Names: MonoBehaviour {
-    public List<string> prefix = new List<string>();
+    public List<Prefix> prefix = new List<Prefix>();
     public List<string> swordNames = new List<string>();
 
     #region Singleton
@@ -20,16 +20,16 @@ public class Names: MonoBehaviour {
         instance = this;
 
         // prefixes (worst -> best)
-        prefix.Add("Blunt");
-        prefix.Add("Weak");
-        prefix.Add("Old");
-        prefix.Add("Normal");
-        prefix.Add("Strong");
-        prefix.Add("Sharp");
-        prefix.Add("Unholy");
-        prefix.Add("Demonic");
-        prefix.Add("Godlike");
-        prefix.Add("Satanist");
+        prefix.Add(new Prefix("Blunt", 0.5f, 0.5f));
+        prefix.Add(new Prefix("Weak", 0.75f, 0.75f));
+        prefix.Add(new Prefix("Old", 0.9f, 0.9f));
+        prefix.Add(new Prefix("Normal", 1f, 1f));
+        prefix.Add(new Prefix("Strong",1.25f,1.25f));
+        prefix.Add(new Prefix("Sharp", 1.5f, 1.5f));
+        prefix.Add(new Prefix("Unholy", 1.75f, 1.75f));
+        prefix.Add(new Prefix("Demonic", 2f, 2f));
+        prefix.Add(new Prefix("Godlike", 2.25f, 2.25f));
+        prefix.Add(new Prefix("Satanic", 4f, 4f));
         // swordNames
         swordNames.Add("Ginger Sword");
         swordNames.Add("Orphan Destroyer");
@@ -43,5 +43,20 @@ public class Names: MonoBehaviour {
         swordNames.Add("Satans Sacrificer");
     }
     #endregion
+
+}
+
+public class Prefix : ScriptableObject
+{
+    public string prefixName;
+    public float dmg;
+    public float price;
+
+    public Prefix(string name, float dmg, float price)
+    {
+        this.prefixName = name;
+        this.dmg = dmg;
+        this.price = price;
+    }
 
 }

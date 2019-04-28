@@ -48,13 +48,17 @@ public class Shop : MonoBehaviour
     public void toggleShop()
     {
         shopUI.SetActive(!shopUI.activeSelf);
-        mainText.text = "Do you want to buy the " + item.name + " ? It costs " + item.price + " lifies";
+        Equipment equipment = (Equipment)item;
+        string text = "Do you want to buy the " + item.name + " ?\n It costs " + item.price + " lifies \n";
+        text += " DAMAGE: " + equipment.damageModifier + "\n RARITY: " + equipment.rarity.rarityTitle;
+
+        mainText.text = text;
         buyButton.enabled = true;
     }
 
     public void Buy()
     {
-        if(item.price > health.getHealth())
+        if(item.price >= health.getHealth())
         {
             mainText.text = "Not enough life";
             return;

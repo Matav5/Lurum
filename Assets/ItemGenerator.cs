@@ -7,16 +7,19 @@ public class ItemGenerator : MonoBehaviour
 {
 
     public Names names;
-    List<Equipment> equipment = new List<Equipment>();
+    public List<Equipment> equipment = new List<Equipment>();
+
     Rarity[] rarities;
     List<Rarity> rarList = new List<Rarity>();
+    GameObject[] pedestals;
 
     // Start is called before the first frame update
     void Start()
     {
+
+        pedestals = GameObject.FindGameObjectsWithTag("Pedestal");
+
         //names = Names.instance;
-        Debug.Log(names);
-        //rarities = Resources.LoadAll<Rarity>("");
         rarities = Resources.LoadAll("Rarities", typeof(Rarity)).Cast<Rarity>().ToArray();
         foreach(Rarity r in rarities)
         {
@@ -31,7 +34,9 @@ public class ItemGenerator : MonoBehaviour
     {
         for (int i = 0; i < 5; i++)
         {
-            string ranName = names.prefix[Random.Range(0, names.prefix.Count)] + " " + names.swordNames[Random.Range(0, names.swordNames.Count)];
+            Prefix ranPrefix = names.prefix[Random.Range(0, names.prefix.Count)];
+            Debug.Log(ranPrefix.prefixName);
+            string ranName = ranPrefix.prefixName + " " + names.swordNames[Random.Range(0, names.swordNames.Count)];
             float ranNum = Random.Range(0f, 1f);
             Rarity ranRar;
 
@@ -52,10 +57,14 @@ public class ItemGenerator : MonoBehaviour
                 ranRar = rarList.Find(name => name.rarityTitle == "Antichrist");
             }
 
-            float ranDmg = ranRar.damageModifier;
+            float ranDmg = ranRar.damageModifier * ranPrefix.dmg;
 
-            equipment.Add(new Equipment(ranName, ranDmg, 0, ranRar, ranRar.price, EquipmentSlot.Weapon));
-            Debug.Log(equipment[i].rarity);
+            equipment.Add(new Equipment(ranName, ranDmg, 0, ranRar, ranRar.price * ranPrefix.price, EquipmentSlot.Weapon));
+
+            equipment[i].icon = equipment[i].rarity.image;
+            pedestals[i].GetComponent<OnClick>().item = equipment[i];
+            pedestals[i].GetComponent<SpriteRenderer>().sprite = equipment[i].rarity.image;
+
         }
     }
 }

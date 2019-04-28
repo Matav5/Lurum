@@ -18,3 +18,4 @@ MonoBehaviour:
   ring: {fileID: 21300000, guid: 98582d2d3a122274b95b010c2f6034a3, type: 3}
   price: 10
   damageModifier: 1
+  image: {fileID: 21300000, guid: 8abfb594fa5822946ae31e3d27a1bf6f, type: 3}

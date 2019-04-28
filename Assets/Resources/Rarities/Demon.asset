@@ -16,3 +16,5 @@ MonoBehaviour:
   dropChance: 0.15
   color: {r: 0.69803923, g: 0, b: 0.42352942, a: 0}
   ring: {fileID: 21300000, guid: 31b5673a3803e954abdabfaba9ff2c6b, type: 3}
+  price: 75
+  damageModifier: 2.5

@@ -10,5 +10,7 @@ public class Rarity : ScriptableObject
     public float dropChance;
     public Color color;
     public Sprite ring;
+    public float price;
+    public float damageModifier;
 
 }

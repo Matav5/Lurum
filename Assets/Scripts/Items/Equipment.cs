@@ -7,14 +7,24 @@ public class Equipment : Item
 {
     public EquipmentSlot equipSlot;
     public Rarity rarity;
-    public int armorModifier;
-    public int damageModifier;
+    public float armorModifier;
+    public float damageModifier;
 
     public override void Use()
     {
         base.Use();
         EquipmentManager.instance.Equip(this);
         RemoveFromInventory();
+    }
+
+    public Equipment(string name, float damageModifier, float armorModifier, Rarity rarity, float price, EquipmentSlot slot)
+    {
+        this.name = name;
+        this.damageModifier = damageModifier;
+        this.armorModifier = armorModifier;
+        this.rarity = rarity;
+        this.price = price;
+        this.equipSlot = slot;
     }
 }
 

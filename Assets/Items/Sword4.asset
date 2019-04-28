@@ -16,6 +16,6 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: db455b301755ffe40a5cb47e88f856ea, type: 3}
   isDefaultItem: 0
   equipSlot: 3
-  rarity: {fileID: 0}
+  rarity: {fileID: 11400000, guid: 5802fdaec2481ee4a8c49559aff5ef27, type: 2}
   armorModifier: 0
   damageModifier: 2

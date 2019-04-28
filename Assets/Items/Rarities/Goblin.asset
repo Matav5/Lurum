@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: Goblin 1
+  m_Name: Goblin
   m_EditorClassIdentifier: Assembly-CSharp::Rarity
   rarityTitle: Goblin
   dropChance: 0.25
-  color: {r: 0.57472247, g: 0.8490566, b: 0.3964934, a: 0}
+  color: {r: 0.42683983, g: 0.6886792, b: 0.31510323, a: 0}
   ring: {fileID: 21300000, guid: 98582d2d3a122274b95b010c2f6034a3, type: 3}
